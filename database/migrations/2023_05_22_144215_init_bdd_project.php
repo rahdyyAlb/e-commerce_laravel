@@ -11,6 +11,41 @@ return new class extends Migration
      */
     public function up(): void
     {
+        schema::create('product',function (Blueprint $table){
+            $table->id();
+            $table->string('name');
+            $table->float('price');
+            $table->string('img');
+
+
+        });
+        schema::create('commande',function (Blueprint $table){
+            $table->id();
+            $table->string('product');
+            $table->dateTime('date_commande');
+            $table->integer('numero_commande');
+            $table->float('price');
+            $table->foreignId('users_id')
+                ->constrained('users')
+                ->references('id')
+                ->on('users');
+
+        });
+        schema::create('detail',function (Blueprint $table){
+            $table->id();
+            $table->foreignId('commande_id')
+                ->constrained('commande')
+                ->references('id')
+                ->on('commande');
+            $table->foreignId('product_id')
+                ->constrained('product')
+                ->references('id')
+                ->on('product');
+            $table->float('price');
+            $table->integer('quantité');
+
+        });
+
         //
     }
 
@@ -19,6 +54,12 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('product');
+        Schema::dropIfExists('commande');
+        Schema::dropIfExists('detail');
+
+
+
+
     }
 };
