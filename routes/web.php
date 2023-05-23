@@ -19,9 +19,8 @@ Route::get('/', function () {
 Route::get('/helloWord',function (){
     return view('helloWord');
 });
-Route::get('/commande',function (){
-    return view('commande');
-});
+Route::get('/commande_detail/{$id}',[Product::class,'detail']);
+Route::get('/commande',[Product::class,'index']);
 
-Route::get('/product/{$id}',[Product::class,'detail']);
+Route::get('/product_detail/{$id}',[Product::class,'detail']);
 Route::get('/product',[Product::class,'index']);
