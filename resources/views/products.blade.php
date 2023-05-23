@@ -17,8 +17,8 @@
                         <div id="product-1" class="single-product">
                             <div class="part-2">
                                 <h3 class="product-title">{{ $product->name }}</h3>
-                                <h4 class="product-price">{{ $product->price }}</h4>
-                                <img src="{{ asset('img/nike_dunk.webp') }}" alt="img">
+                                <img src="{{ asset($product->img) }}" alt="img">
+                                <h5 class="product-price">{{ $product->price }}</h5>
                             </div>
                         </div>
                     </div>
