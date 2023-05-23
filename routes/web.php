@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Product;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,3 +19,8 @@ Route::get('/', function () {
 Route::get('/helloWord',function (){
     return view('helloWord');
 });
+Route::get('/commande_detail/{$id}',[Product::class,'detail']);
+Route::get('/commande',[Product::class,'index']);
+
+Route::get('/product_detail/{$id}',[Product::class,'detail']);
+Route::get('/product',[Product::class,'index']);
