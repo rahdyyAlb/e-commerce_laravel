@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        schema::create('product',function (Blueprint $table){
+        schema::create('products',function (Blueprint $table){
             $table->id();
             $table->string('name');
             $table->float('price');
@@ -19,7 +19,7 @@ return new class extends Migration
 
 
         });
-        schema::create('commande',function (Blueprint $table){
+        schema::create('commandes',function (Blueprint $table){
             $table->id();
             $table->string('product');
             $table->dateTime('date_commande');
@@ -33,12 +33,12 @@ return new class extends Migration
         });
         schema::create('detail',function (Blueprint $table){
             $table->id();
-            $table->foreignId('commande_id')
-                ->constrained('commande')
+            $table->foreignId('commandes_id')
+                ->constrained('commandes')
                 ->references('id')
                 ->on('commande');
-            $table->foreignId('product_id')
-                ->constrained('product')
+            $table->foreignId('products_id')
+                ->constrained('products')
                 ->references('id')
                 ->on('product');
             $table->float('price');
