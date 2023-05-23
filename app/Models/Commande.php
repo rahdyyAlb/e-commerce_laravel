@@ -9,9 +9,6 @@ class Commande extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'product',
-        'date_commande',
-        'numero_commande',
-        'price',
+
     ];
 }
