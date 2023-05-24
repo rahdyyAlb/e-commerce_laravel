@@ -41,19 +41,28 @@
                     <textarea class="form-control" style="height:150px" name="detail" placeholder="Detail">{{ $product->detail }}</textarea>
                 </div>
             </div>
+<<<<<<< HEAD
             <div class="col-md-8 offset-md-2 mt-2">
+=======
+>>>>>>> main
             <div class="form-group">
                 <strong>Prix:</strong>
                 <input type="number" name="price" value="{{ $product->price }}" class="form-control" placeholder="price">
             </div>
+<<<<<<< HEAD
             </div>
             <div class="col-md-8 offset-md-2 mt-2">
+=======
+
+            <div class="col-xs-12 col-sm-12 col-md-12">
+>>>>>>> main
                 <div class="form-group">
                     <strong>Image:</strong>
                     <input type="file" name="image" class="form-control" placeholder="image">
                     <img src="/images/{{ $product->image }}" width="300px">
                 </div>
             </div>
+
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
