@@ -10,7 +10,7 @@
                     </div>
                 </div>
             </div>
-            <div class="pull-right">
+            <div class="pull-right text-right">
                 <a class="btn btn-success" href="{{ route('products.create') }}"> Create New Product</a>
             </div>
             @if ($message = Session::get('success'))
