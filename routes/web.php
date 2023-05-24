@@ -13,9 +13,6 @@ use App\Http\Controllers\ProductsController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 Route::get('/helloWord',function (){
     return view('helloWord');
 });
@@ -23,4 +20,4 @@ Route::get('/commande_detail/{$id}',[ProductsController::class,'detail']);
 Route::get('/commande',[ProductsController::class,'index']);
 
 Route::get('/product_detail/{$id}',[ProductsController::class,'detail']);
-Route::get('/products',[ProductsController::class,'all']);
+Route::get('/',[ProductsController::class,'all']);

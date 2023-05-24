@@ -36,11 +36,11 @@ return new class extends Migration
             $table->foreignId('commandes_id')
                 ->constrained('commandes')
                 ->references('id')
-                ->on('commande');
+                ->on('commandes');
             $table->foreignId('products_id')
                 ->constrained('products')
                 ->references('id')
-                ->on('product');
+                ->on('products');
             $table->float('price');
             $table->integer('quantité');
 
