@@ -18,12 +18,12 @@ Installation en local
 * Premièrement cloner le projet
 * copier le .env
 * Lancer les commande suivante :
-* composer install
-* yarn install
+* ``` composer install ```
+* ``` npm install ```
 * pour suprimmer la bdd ``` php artisan db:wipe  ```
 * recupere la nouvelle migration ```php artisan migrate ```
 * pour recuperer les donner ```php artisan db:seed --class=ProductTableSeeder  ```
-* Npm run dev
+* ```Npm run dev ``` 
 * Php artisan serve -d Pour lancer le serveur web
 * Le projet devrait être accessible via 127.0.0.1
 
