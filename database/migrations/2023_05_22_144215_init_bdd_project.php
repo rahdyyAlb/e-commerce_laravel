@@ -13,9 +13,12 @@ return new class extends Migration
     {
         schema::create('products',function (Blueprint $table){
             $table->id();
+            $table->dateTime('created_at')->default(now());
+            $table->dateTime('updated_at')->nullable();
             $table->string('name');
             $table->float('price');
-            $table->string('img');
+            $table->string('detail');
+            $table->string('img')->default('nul');
 
 
         });
@@ -24,7 +27,7 @@ return new class extends Migration
             $table->string('product');
             $table->dateTime('date_commande');
             $table->integer('numero_commande');
-            $table->float('price');
+            $table->float('price')->default(0);
             $table->foreignId('users_id')
                 ->constrained('users')
                 ->references('id')
