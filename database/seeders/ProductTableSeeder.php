@@ -16,6 +16,38 @@ class ProductTableSeeder extends Seeder
         DB::table('products')->insert(
           [
             ['name'=> 'Nike Dunk',
+              'price'=> 99.99,
+              'img'=> 'img/nike_dunk.webp'],
+
+            [ 'name'=> 'Nike Air Max',
+              'price'=> 139.99,
+              'img'=> 'img/nike_airmax95.webp'],
+
+            [ 'name'=> 'Nike Dunk High',
+              'price'=> 149.99,
+              'img'=> 'img/nike_dunk_high.webp'],
+
+            [ 'name'=> 'Nike TN',
+              'price'=> 129.99,
+              'img'=> 'img/nike_tn.webp'],
+
+            ['name'=> 'Nike Air Force',
+              'price'=> 119.99,
+              'img'=> 'img/nike_airforce.webp'],
+
+            ['name'=> 'Nike Air Jordan',
+              'price'=> 109.99,
+              'img'=> 'img/nike_airjordan.webp'],
+
+            ['name'=> 'Nike Blazer',
+              'price'=> 104.99,
+              'img'=> 'img/nike_blazer.webp'],
+
+            ['name'=> 'Nike Pegasus',
+              'price'=> 89.99,
+              'img'=> 'img/nike_pegasus.webp'],
+
+            ['name'=> 'Nike Dunk',
             'price'=> 99.99,
             'img'=> 'img/nike_dunk.webp'],
 
@@ -45,7 +77,7 @@ class ProductTableSeeder extends Seeder
 
             ['name'=> 'Nike Pegasus',
             'price'=> 89.99,
-            'img'=> 'img/nike_pegasus.web']
+            'img'=> 'img/nike_pegasus.webp']
           ]
 
         );
