@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\CommandeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,8 +17,8 @@ use App\Http\Controllers\ProductsController;
 Route::get('/helloWord',function (){
     return view('helloWord');
 });
-Route::get('/commande_detail/{$id}',[ProductsController::class,'detail']);
-Route::get('/commande',[ProductsController::class,'index']);
+Route::get('/commande_detail/{$id}',[CommandeController::class,'detail']);
+Route::get('/commande',[CommandeController::class,'index']);
 
 Route::get('/products/create', [ProductsController::class, 'create'])->name('products.create');
 Route::delete('/products/{id}', [ProductsController::class, 'destroy'])->name('products.destroy');
