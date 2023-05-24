@@ -27,7 +27,7 @@
                                 <div class="part-2">
                                     <h3 class="product-title">{{ $product->name }}</h3>
                                     <img src="{{ asset('images/'.$product->img) }}" alt="img">
-                                    <h5 class="product-price">{{ $product->price }}</h5>
+                                    <h5 class="product-price">{{ $product->price }} €</h5>
                                 </div>
                             </div>
                         </div>

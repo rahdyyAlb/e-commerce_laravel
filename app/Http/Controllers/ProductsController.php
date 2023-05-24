@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Products;
 use Illuminate\Http\Request;
-use Illuminate\View\View;
 
 class ProductsController extends Controller
 {
@@ -38,27 +37,10 @@ class ProductsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request,)
     {
-        $request->validate([
-            'name' => 'required',
-            'price' => 'required',
-            'detail'=>'required',
-            'img'=> 'required'
-
-        ]);
-
-        $input = $request->all();
-
-        if ($image = $request->file('img')) {
-            $destinationPath = 'images/';
-            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
-            $image->move($destinationPath, $profileImage);
-            $input['img'] = "$profileImage";
-        }
-
-        Products::create($input);
-
+        $products = new Products();
+        $products ->testAddProduct(  $request);
         return redirect()->route('products.index')
             ->with('success','Produits créés avec succès.');
     }
@@ -84,25 +66,8 @@ class ProductsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-        ]);
-
-        $input = $request->all();
-
-        if ($image = $request->file('img')) {
-            $destinationPath = 'images/';
-            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
-            $image->move($destinationPath, $profileImage);
-            $input['img'] = "$profileImage";
-        }
-
-    else{
-            unset($input['image']);
-        }
-        $product = Products::find($id);
-
-        $product->update($input);
-
+        $Project = new Products();
+        $Project->testUpdateProduct($request,$id);
         return redirect()->route('products.index')
             ->with('success','Produits mis à jour avec succès');
     }
