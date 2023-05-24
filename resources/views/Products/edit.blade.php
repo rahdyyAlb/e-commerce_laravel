@@ -40,6 +40,11 @@
                     <textarea class="form-control" style="height:150px" name="detail" placeholder="Detail">{{ $product->detail }}</textarea>
                 </div>
             </div>
+            <div class="form-group">
+                <strong>Prix:</strong>
+                <input type="number" name="price" value="{{ $product->price }}" class="form-control" placeholder="price">
+            </div>
+
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Image:</strong>

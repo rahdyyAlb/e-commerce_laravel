@@ -43,6 +43,9 @@
                 @endforeach
             </div>
         </div>
-        {!! $products->links() !!}
+        <div class="pagination justify-content-center">
+            {{ $products->links()}}
+        </div>
+
     </section>
 @endsection

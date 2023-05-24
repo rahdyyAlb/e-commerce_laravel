@@ -60,7 +60,7 @@ class ProductsController extends Controller
         Products::create($input);
 
         return redirect()->route('products.index')
-            ->with('success','Products created successfully.');
+            ->with('success','Produits créés avec succès.');
     }
 
     public function show( $id)
@@ -82,10 +82,9 @@ class ProductsController extends Controller
      * @param  Products  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Products $product)
+    public function update(Request $request, $id)
     {
         $request->validate([
-            'name' => 'required',
         ]);
 
         $input = $request->all();
@@ -100,11 +99,12 @@ class ProductsController extends Controller
     else{
             unset($input['image']);
         }
+        $product = Products::find($id);
 
         $product->update($input);
 
         return redirect()->route('products.index')
-            ->with('success','Products updated successfully');
+            ->with('success','Produits mis à jour avec succès');
     }
 
     /**
@@ -119,7 +119,7 @@ class ProductsController extends Controller
         $product->delete();
 
         return redirect()->route('products.index')
-            ->with('success','Products deleted successfully');
+            ->with('success','Produits supprimés avec succès');
     }
 
 }
