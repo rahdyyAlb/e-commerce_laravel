@@ -11,20 +11,23 @@ return new class extends Migration
      */
     public function up(): void
     {
-        schema::create('product',function (Blueprint $table){
+        schema::create('products',function (Blueprint $table){
             $table->id();
+            $table->dateTime('created_at')->default(now());
+            $table->dateTime('updated_at')->nullable();
             $table->string('name');
             $table->float('price');
-            $table->string('img');
+            $table->string('detail');
+            $table->string('img')->default('nul');
 
 
         });
-        schema::create('commande',function (Blueprint $table){
+        schema::create('commandes',function (Blueprint $table){
             $table->id();
             $table->string('product');
             $table->dateTime('date_commande');
             $table->integer('numero_commande');
-            $table->float('price');
+            $table->float('price')->default(0);
             $table->foreignId('users_id')
                 ->constrained('users')
                 ->references('id')
@@ -33,14 +36,14 @@ return new class extends Migration
         });
         schema::create('detail',function (Blueprint $table){
             $table->id();
-            $table->foreignId('commande_id')
-                ->constrained('commande')
+            $table->foreignId('commandes_id')
+                ->constrained('commandes')
                 ->references('id')
-                ->on('commande');
-            $table->foreignId('product_id')
-                ->constrained('product')
+                ->on('commandes');
+            $table->foreignId('products_id')
+                ->constrained('products')
                 ->references('id')
-                ->on('product');
+                ->on('products');
             $table->float('price');
             $table->integer('quantité');
 
