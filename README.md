@@ -6,6 +6,8 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
+<h1># DFS_27A_laravel</h1>
+
 
 Mise en place du projet
 
@@ -27,4 +29,4 @@ Installation en local
 * Php artisan serve -d Pour lancer le serveur web
 * Le projet devrait être accessible via 127.0.0.1
 
-# DFS_27A_laravel
+
