@@ -163,7 +163,9 @@ svg{
     width: 35px;
 
 }
-
+.baskette{
+    width: 250px !important;
+}
 a,
 a:hover {
     text-decoration: none;
