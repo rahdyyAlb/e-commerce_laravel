@@ -2,12 +2,6 @@
 
 @section('content')
     <section>
-
-        @if(Auth::check())
-            <div class="pull-right text-right">
-                <a class="btn btn-success" href="{{ route('products.create') }}"> Create New Product</a>
-            </div>
-        @endif
         @if ($message = Session::get('success'))
             <div class="alert alert-success">
                 <p>{{ $message }}</p>
@@ -41,23 +35,23 @@
                                 <a href="" class="text-reset">
                                     <h5 class="card-title mb-2">{{ $product->name }}</h5>
                                 </a>
-                                <a href="" class="text-reset ">
-                                    <p>Shirt</p>
-                                </a>
                                 <h6 class="mb-3 price">{{ $product->price }}€</h6>
                             </div>
+                            @if(Auth::check())
+
+                               <div>
+                                   <a class="btn btn-primary " href="{{ route('products.edit',$product->id) }}">Edit</a>
+                                   <form action="{{ route('products.destroy',$product->id) }}" method="POST" class="d-inline">
+                                       @csrf
+                                       @method('DELETE')
+                                       <button type="submit" class="btn btn-danger">Delete</button>
+                                   </form>
+                               </div>
+                            @endif
+
+
                         </div>
                     </div>
-                    @if(Auth::check())
-
-                        <a class="btn btn-primary" href="{{ route('products.edit',$product->id) }}">Edit</a>
-                        <form action="{{ route('products.destroy',$product->id) }}" method="POST" class="d-inline">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger">Delete</button>
-                        </form>
-                    @endif
-
                 @endforeach
 
             </div>
