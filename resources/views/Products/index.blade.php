@@ -1,49 +1,64 @@
 @extends('base')
 
 @section('content')
-    <section class="section-products">
-        <div class="container">
-            <div class="row justify-content-center text-center">
-                <div class="col-md-8 col-lg-6">
-                    <div class="header">
-                        <h2>Products</h2>
-                    </div>
-                </div>
-            </div>
+    <section>
+        @if(Auth::check())
             <div class="pull-right text-right">
                 <a class="btn btn-success" href="{{ route('products.create') }}"> Create New Product</a>
             </div>
-            @if ($message = Session::get('success'))
-                <div class="alert alert-success">
-                    <p>{{ $message }}</p>
-                </div>
-            @endif
-            <div class="row mt-4">
+        @endif
+        @if ($message = Session::get('success'))
+            <div class="alert alert-success">
+                <p>{{ $message }}</p>
+            </div>
+        @endif
+
+        <div class="text-center">
+            <div class="row">
                 @foreach ($products as $product)
-                    <div class="col-md-4">
-                        <div id="product-{{ $product->id }}" class="single-product">
-                            <div class="part-2 col d-flex align-items-center flex-column">
-                                <h3 class="product-title">{{ $product->name }}</h3>
+
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="card" id="product-{{ $product->id }}">
+                            <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
+                                 data-mdb-ripple-color="light">
                                 <a  href="{{ route('products.show',$product->id) }}">
-                                    <img src="{{ asset('images/'.$product->img) }}" alt="img">
+                                    <img src="{{ asset('images/'.$product->img) }}"
+                                         class="w-100" />
                                 </a>
-                                <h5 class="product-price">{{ $product->price }}</h5>
-                                <div>
-                                    @if(Auth::check())
-
-                                    <a class="btn btn-primary" href="{{ route('products.edit',$product->id) }}">Edit</a>
-                                    <form action="{{ route('products.destroy',$product->id) }}" method="POST" class="d-inline">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger">Delete</button>
-                                    </form>
-                                    @endif
-
-                                </div>
+                                <a href="#!">
+                                    <div class="mask">
+                                        <div class="d-flex justify-content-start align-items-end h-100">
+                                            <h5><span class="badge bg-dark ms-2">NEW</span></h5>
+                                        </div>
+                                    </div>
+                                    <div class="hover-overlay">
+                                        <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <a href="" class="text-reset">
+                                    <h5 class="card-title mb-2">{{ $product->name }}</h5>
+                                </a>
+                                <a href="" class="text-reset ">
+                                    <p>Shirt</p>
+                                </a>
+                                <h6 class="mb-3 price">{{ $product->price }}€</h6>
                             </div>
                         </div>
                     </div>
+                    @if(Auth::check())
+
+                        <a class="btn btn-primary" href="{{ route('products.edit',$product->id) }}">Edit</a>
+                        <form action="{{ route('products.destroy',$product->id) }}" method="POST" class="d-inline">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    @endif
+
                 @endforeach
+
             </div>
 
         </div>
@@ -52,5 +67,6 @@
         </div>
 
     </section>
-@endsection
 
+
+@endsection
