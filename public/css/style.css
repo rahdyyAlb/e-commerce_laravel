@@ -147,6 +147,14 @@ div.site-description div.row div.col-sm-4 div.pull-right div#simple-social-icons
 .product{
     margin: 30px;
 }
+.img-responsive{
+    width: 90px;
+    height: 90px;
+    margin-right: 700px;
+}
+h1{
+    text-align: center;
+}
 body {
     font-family: "Poppins", sans-serif;
     color: #444444;

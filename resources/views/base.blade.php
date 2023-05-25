@@ -13,65 +13,47 @@
     <div class="container">
         <header role="banner">
             <div class="row row-with-vspace site-branding">
-                <div class="col-sm-2  site-title">
-                    <h1 class="site-title-heading">
-                        <a href="{{ route('products.index') }} "title="Example Home" rel="home"><img src="{{ asset('images/it-akademy-sanscravate-transp-1585925610-2.png') }}" class="img-responsive home" border="0" ></a>
-                    </h1>
-                </div><!-- Close col sm2-->
-                <div class="col-sm-10 page-header-top-right">
-                    <div class="site-description">
-                        <div class="row">
-                            <div class="col-sm-8" style="text-align: center;">
-                                <h1>DSF_27 E-commerce</h1><br>
+                <div  style="text-align: center;">
+                    <h1>DSF_27 E-commerce</h1>
+                </div> <!-- Close col sm8-->
 
-                            </div> <!-- Close col sm8-->
-                                            @auth
-                                                <ul>
-                                                    <li>Bonjour, {{ Auth::user()->name }}</li>
-                                                    <li>
-                                                        <a href="{{ route('logout') }}" class="btn btn-primary" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Déconnexion</a>
-                                                    </li>
-                                                    <li>
-                                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                                            @csrf
-                                                        </form>
-                                                        <a href="{{ route('moncompte') }}">Mon compte</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="btn btn-success" href="{{ route('products.create') }}"> Create New Product</a>
-                                                    </li>
-                                                </ul>
-                                            @else
-                                                <a href="{{ route('login') }}" class="btn btn-secondary">Se connecter</a>
-                                        @endauth
-                        </div>
-                    </div>
-            </div>
-                <nav class="navbar navbar-dark bg-dark">
+                <nav class="navbar navbar-expand-lg navbar-light ">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Navbar</a>
-
+                    <img src="{{ asset('images/it-akademy-sanscravate-transp-1585925610-2.png') }}" class="img-responsive home navbar-brand" border="0" >
                     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                             <li class="nav-item active">
-                                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="{{ route('products.index') }}">Home <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Link</a>
+                                <a class="nav-link" href="/rgpd">RGPD</a>
+                            </li>
+                        @auth
+                            <li class="nav-item">
+                                <a href="{{ route('moncompte') }}" class="nav-link">Mon compte</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link disabled" href="#">Disabled</a>
+                                <a href="{{ route('products.create') }}" class="nav-link">Create New Product</a>
                             </li>
+                            <li class="nav-item">
+                                <a href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Déconnexion</a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+
+                            </li>
+
+                            @else
+                            <li class="nav-item">
+                                <a href="{{ route('login') }}" class="nav-link">Se connecter</a>
+                            </li>
+                            @endauth
                         </ul>
-                        <form class="form-inline my-2 my-lg-0">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                        </form>
                     </div>
                 </nav>
-
+            </div><!--row .site-branding-->
         </header>
     </div><!--.container-->
 </div><!--.header-wrapper-->
@@ -80,7 +62,11 @@
 <footer class="text-center text-white mt-4" style="background-color: #607D8B">
     <hr class="text-dark">
     <div class="container">
-        <a href="/rgpd">RGPD</a>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem corporis doloremque ducimus exercitationem
+            molestiae molestias quo, veritatis? Alias at blanditiis delectus molestias quae tenetur totam voluptate
+            voluptatibus. Asperiores ea iure minima officiis quidem. In, odio, rem. Aperiam blanditiis consectetur
+            consequatur deserunt doloribus dolorum ea earum eius eveniet laudantium libero nemo omnis, perspiciatis
+            quisquam reiciendis rerum, sint, vero! Mollitia, quae ullam.</p>
         <section class="mb-3">
             <a
                 class="btn-link btn-floating btn-lg text-white"
