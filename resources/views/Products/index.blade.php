@@ -1,7 +1,7 @@
 @extends('base')
 
 @section('content')
-    <section>
+    <section class="product">
         @if ($message = Session::get('success'))
             <div class="alert alert-success">
                 <p>{{ $message }}</p>
@@ -11,7 +11,6 @@
         <div class="text-center">
             <div class="row">
                 @foreach ($products as $product)
-
                     <div class="col-lg-3 col-md-6 mb-4">
                         <div class="card" id="product-{{ $product->id }}">
                             <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"

@@ -144,7 +144,9 @@ div.site-description div.row div.col-sm-4 div.pull-right div#simple-social-icons
     display: inline-block;
     float: none;
 }
-
+.product{
+    margin: 30px;
+}
 body {
     font-family: "Poppins", sans-serif;
     color: #444444;
