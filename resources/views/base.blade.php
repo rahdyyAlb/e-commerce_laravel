@@ -23,45 +23,55 @@
                         <div class="row">
                             <div class="col-sm-8" style="text-align: center;">
                                 <h1>DSF_27 E-commerce</h1><br>
+
                             </div> <!-- Close col sm8-->
-                            <div class="col-sm-4">
-                                <div class="pull-right">
-                                    <div id="simple-social-icons-3" class="widget simple-social-icons"><ul class="alignleft">
                                             @auth
-                                                <p>Bonjour, {{ Auth::user()->name }}</p>
-                                                <a href="{{ route('logout') }}" class="btn btn-primary" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Déconnexion</a>
-                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                                    @csrf
-                                                </form>
-                                                <a href="{{ route('moncompte') }}">Mon compte</a>
+                                                <ul>
+                                                    <li>Bonjour, {{ Auth::user()->name }}</li>
+                                                    <li>
+                                                        <a href="{{ route('logout') }}" class="btn btn-primary" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Déconnexion</a>
+                                                    </li>
+                                                    <li>
+                                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                            @csrf
+                                                        </form>
+                                                        <a href="{{ route('moncompte') }}">Mon compte</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="btn btn-success" href="{{ route('products.create') }}"> Create New Product</a>
+                                                    </li>
+                                                </ul>
                                             @else
                                                 <a href="{{ route('login') }}" class="btn btn-secondary">Se connecter</a>
                                         @endauth
-                                    </div>
-                                    @if(Auth::check())
-                                        <div class="pull-right text-right">
-                                            <a class="btn btn-success" href="{{ route('products.create') }}"> Create New Product</a>
-                                        </div>
-                                    @endif
+                        </div>
+                    </div>
+            </div>
+                <nav class="navbar navbar-dark bg-dark">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Navbar</a>
 
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>
+                    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Link</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled" href="#">Disabled</a>
+                            </li>
+                        </ul>
+                        <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        </form>
                     </div>
-                    <div class="row main-navigation">
-                        <div class="col-md-12">
-                            <nav class="navbar navbar-default" role="navigation">
-                                <div class="navbar-header">
-                                </div>
-                            </nav>
-                        </div>
-                    </div><!--.main-navigation-->
-                    <div class="sr-only">
-                        <a href="#content" title="Skip to content">Skip to content</a>
-                    </div>
-                </div>
-            </div><!--row .site-branding-->
+                </nav>
+
         </header>
     </div><!--.container-->
 </div><!--.header-wrapper-->
@@ -70,6 +80,7 @@
 <footer class="text-center text-white mt-4" style="background-color: #607D8B">
     <hr class="text-dark">
     <div class="container">
+        <a href="/rgpd">RGPD</a>
         <section class="mb-3">
             <a
                 class="btn-link btn-floating btn-lg text-white"

@@ -17,9 +17,6 @@ use App\Http\Controllers\CommandeController;
 |
 */
 
-Route::get('/helloWord',function (){
-    return view('helloWord');
-});
 Route::get('/commande_detail/{$id}',[CommandeController::class,'detail']);
 Route::get('/commande',[CommandeController::class,'index']);
 
@@ -47,3 +44,6 @@ Route::post('/logout', function () {
     Auth::logout();
     return redirect('/');  // Redirige l'utilisateur vers la page d'accueil après la déconnexion
 })->name('logout');
+Route::get('/rgpd',function (){
+    return view('rgpd');
+})->name('rgpd');
