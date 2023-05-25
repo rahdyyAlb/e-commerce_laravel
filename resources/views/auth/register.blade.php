@@ -24,6 +24,46 @@
                                     @enderror
                                 </div>
                             </div>
+                            <div class="form-group row">
+                                <label for="prenom" class="col-md-4 col-form-label text-md-right">Prenom</label>
+
+                                <div class="col-md-6">
+                                    <input id="prenom" type="text" class="form-control @error('prenom') is-invalid @enderror" name="prenom" value="{{ old('prenom') }}" required autocomplete="prenom" autofocus>
+
+                                    @error('prenom')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="adresse" class="col-md-4 col-form-label text-md-right">Adresse</label>
+
+                                <div class="col-md-6">
+                                    <input id="adresse" type="text" class="form-control @error('prenom') is-invalid @enderror" name="adresse" value="{{ old('adresse') }}" required autocomplete="adresse" autofocus>
+
+                                    @error('adresse')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="code_postal" class="col-md-4 col-form-label text-md-right">Code Postal</label>
+
+                                <div class="col-md-6">
+                                    <input id="code_postal" type="text" class="form-control @error('code_postal') is-invalid @enderror" name="code_postal" value="{{ old('code_postal') }}" required autocomplete="adresse" autofocus>
+
+                                    @error('adresse')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
+
 
                             <div class="form-group row">
                                 <label for="email" class="col-md-4 col-form-label text-md-right">Adresse Email</label>

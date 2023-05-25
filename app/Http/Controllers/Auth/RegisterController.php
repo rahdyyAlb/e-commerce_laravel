@@ -21,12 +21,18 @@ class RegisterController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:8|confirmed',
+            'adresse'=>'required',
+            'prenom'=>'required',
+            'code_postal'=>'required',
         ]);
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'adresse'=>$request->adresse,
+            'prenom'=>$request->prenom,
+            'code_postal'=>$request->code_postal,
         ]);
 
         Auth::login($user);
