@@ -2,6 +2,7 @@
 
 @section('content')
     <section>
+
         @if(Auth::check())
             <div class="pull-right text-right">
                 <a class="btn btn-success" href="{{ route('products.create') }}"> Create New Product</a>
