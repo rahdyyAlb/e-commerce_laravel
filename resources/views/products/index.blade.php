@@ -9,7 +9,7 @@
         @endif
 
         <div class="text-center">
-            <div class="row">
+            <div class="row-Product">
                 @foreach ($products as $product)
                     <div class="col-lg-3 col-md-6 mb-4 baskette" >
                         <div class="card" id="product-{{ $product->id }}">
