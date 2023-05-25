@@ -28,3 +28,19 @@ Route::put('/products/{id}/update', [ProductsController::class, 'update'])->name
 
 Route::post('/products',[ProductsController::class,'store'])->name('products.store');;
 Route::get('/', [ProductsController::class, 'index'])->name('products.index');
+
+
+
+Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
+Route::post('/register', [RegisterController::class, 'register']);
+
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [LoginController::class, 'login']);
+
+
+Route::get('/moncompte', [UserController::class, 'show'])->name('moncompte')->middleware('auth');
+
+Route::post('/logout', function () {
+    Auth::logout();
+    return redirect('/');  // Redirige l'utilisateur vers la page d'accueil après la déconnexion
+})->name('logout');
