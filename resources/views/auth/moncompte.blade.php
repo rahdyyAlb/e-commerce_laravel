@@ -4,7 +4,8 @@
     <div class="container py-5">
         <p>Bonjour, {{ $user->name }} {{ $user->prenom }} </p>
         <p>Votre adresse e-mail est {{ $user->email }}</p>
-        <P> {{ $user->adress }}</P>
+        <P> {{ $user->adresse }}</P>
+        <P> {{ $user->city }}</P>
         <P>{{ $user->code_postal}}</P>
     </div>
     <table class="table table-hover">

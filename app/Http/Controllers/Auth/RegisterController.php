@@ -23,6 +23,7 @@ class RegisterController extends Controller
             'password' => 'required|min:8|confirmed',
             'adresse'=>'required',
             'prenom'=>'required',
+            'city'=>'required',
             'code_postal'=>'required',
         ]);
 
@@ -33,6 +34,8 @@ class RegisterController extends Controller
             'adresse'=>$request->adresse,
             'prenom'=>$request->prenom,
             'code_postal'=>$request->code_postal,
+            'city'=>$request->city,
+
         ]);
 
         Auth::login($user);
