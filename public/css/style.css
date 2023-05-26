@@ -176,6 +176,38 @@ a:hover {
     grid-template-columns: repeat(4,1fr)!important;
     margin-left: 5%;
 }
+.admin-img
+{
+    width: 50px !important;
+    height: 50px !important;
+}
+table{
+    text-align: center;
+}
+#panier {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+}
+
+#panier img {
+    width: 40px;
+    height: 40px;
+}
+
+#panier #nombre-articles {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
+    text-align: center;
+    line-height: 20px;
+}
 
 img {
     width: 200px;

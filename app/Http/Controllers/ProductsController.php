@@ -20,7 +20,12 @@ class ProductsController extends Controller
         return view('products.index',compact('products'))
             ->with('i', (request()->input('page', 1) - 1) * 8);
     }
+    public function admin()
+    {
 
+        $products =  Products::all();
+        return view('products.admin', ['products' => $products]);
+    }
     /**
      * Show the form for creating a new resource.
      *
