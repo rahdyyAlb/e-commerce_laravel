@@ -13,13 +13,12 @@
     sessionStorage.setItem("nombreArticles", quantite);
 }
 
-    // Exemple d'utilisation de la fonction
     // Récupérer le nombre d'articles depuis la session
     var nombreArticlesSession = sessionStorage.getItem("nombreArticles");
     var quantiteDepart = nombreArticlesSession ? parseInt(nombreArticlesSession) : 0;
     updateNombreArticles(quantiteDepart);
 
-    // Exemple d'ajout d'un article au panier
+    // Ajouter un article au panier
     var boutonsAjouterPanier = document.querySelectorAll("#addcart");
     boutonsAjouterPanier.forEach(function(bouton) {
     bouton.addEventListener("click", function() {
@@ -29,4 +28,10 @@
         var quantiteActuelle = parseInt(document.getElementById("nombre-articles").textContent);
         updateNombreArticles(quantiteActuelle + 1);
     });
+});
+
+    // Remettre à zéro le nombre d'articles dans le panier
+    var boutonDeconnexion = document.getElementById("deconnexion");
+    boutonDeconnexion.addEventListener("click", function() {
+    updateNombreArticles(0);
 });

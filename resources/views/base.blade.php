@@ -41,7 +41,7 @@
                                     <a href="{{ route('products.admin') }}" class="nav-link">Gestion des produit</a>
                                 </li>
                             <li class="nav-item">
-                                <a href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Déconnexion</a>
+                                <a href="{{ route('logout') }}" id="deconnexion" class="nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Déconnexion</a>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     @csrf
                                 </form>
