@@ -37,10 +37,18 @@
                                     <h5 class="card-title mb-2">{{ $product->name }}</h5>
                                 </a>
                                 <h6 class="mb-3 price">{{ $product->price }}€</h6>
-                                <a href="#" class="btn btn-success " id="add-panier">
-                                    +
-                                </a>
-
+                                <form  method="POST" action="{{ route('card.store') }}">
+                                    @csrf
+                                    <div class="input-field col">
+                                        <input type="hidden" id="id" name="id" value="{{ $product->id }}">
+                                        <input id="quantity" name="quantity"  type="hidden" value="1" min="1">
+                                        <p>
+                                            <button class="btn btn-success waves-effect waves-light" style="width:100%" type="submit" id="addcart">
+                                                Ajouter au panier
+                                            </button>
+                                        </p>
+                                    </div>
+                                </form>
                             </div>
 
                         </div>

@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\CommandeController;
@@ -44,6 +46,11 @@ Route::post('/logout', function () {
     Auth::logout();
     return redirect('/');  // Redirige l'utilisateur vers la page d'accueil après la déconnexion
 })->name('logout');
+
 Route::get('/rgpd',function (){
     return view('rgpd');
 })->name('rgpd');
+Route::get('/panier',[CartController::class,'index'])->name('card.index');
+Route::post('/panier/registred',[CartController::class,'store'])->name('card.store');
+Route::put('/panier/{id}/update/',[CartController::class,'update'])->name('card.update');
+Route::delete('/panier/{id}',[CartController::class,'destroy'])->name('card.destroy');

@@ -9,7 +9,7 @@
     updateNombreArticles(0);
 
     // Exemple d'ajout d'un article au panier
-    var boutonsAjouterPanier = document.querySelectorAll("#add-panier");
+    var boutonsAjouterPanier = document.querySelectorAll("#addcart");
     boutonsAjouterPanier.forEach(function(bouton) {
     bouton.addEventListener("click", function() {
         // Ajoutez ici votre logique pour ajouter un article au panier

@@ -54,7 +54,9 @@
                             @endauth
                         </ul>
                         <div id="panier">
-                            <img src="{{ asset('images/logo_panier.png') }}" alt="Logo Panier">
+                           <a href="{{ route('card.index') }}">
+                               <img src="{{ asset('images/logo_panier.png') }}" alt="Logo Panier">
+                           </a>
                             <span id="nombre-articles"></span>
                         </div>
 
