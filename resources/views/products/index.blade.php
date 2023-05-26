@@ -31,7 +31,6 @@
                                     </div>
                                 </a>
                             </div>
-
                             <div class="card-body">
                                 <a href="" class="text-reset">
                                     <h5 class="card-title mb-2">{{ $product->name }}</h5>
@@ -63,6 +62,5 @@
         </div>
 
     </section>
-
 
 @endsection

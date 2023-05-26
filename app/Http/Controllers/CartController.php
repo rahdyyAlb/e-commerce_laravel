@@ -33,7 +33,8 @@ class CartController extends Controller
         $cart = new Cart($session,$events,$instanceName,$session_key,$config);
         $content  = $cart->getContent();
         $total = $cart->getTotal();
-        return view('cart.index', compact('content', 'total'));
+        $totalPanier = $cart->getTotalQuantity();
+        return view('cart.index', compact('content', 'totalPanier','total'));
     }
     /**
      * Show the form for creating a new resource.
