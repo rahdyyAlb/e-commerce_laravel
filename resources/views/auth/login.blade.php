@@ -1,6 +1,7 @@
 @extends('base')
 
 @section('content')
+
     <div class="container">
         <form method="POST" action="{{ route('login') }}">
             @csrf

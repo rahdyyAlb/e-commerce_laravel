@@ -1,7 +1,6 @@
 @extends('base')
 
 @section('content')
-    <section class="product">
         @if ($message = Session::get('success'))
             <div class="alert alert-success">
                 <p>{{ $message }}</p>
@@ -61,6 +60,5 @@
             {{ $products->links()}}
         </div>
 
-    </section>
 
 @endsection

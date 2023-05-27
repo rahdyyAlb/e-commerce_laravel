@@ -1,7 +1,6 @@
 @extends('base')
 
 @section('content')
-<section class="product">
 
     <table class="table table-bordered">
         <thead class="thead-dark">
@@ -36,6 +35,5 @@
         @endforeach
         </tbody>
     </table>
-</section>
 
 @endsection

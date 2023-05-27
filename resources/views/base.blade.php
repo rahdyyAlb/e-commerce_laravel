@@ -66,8 +66,10 @@
         </header>
     </div><!--.container-->
 </div><!--.header-wrapper-->
+<section class="product">
 
 @yield('content')
+</section>
 <footer class="text-center text-white mt-4" style="background-color: #607D8B">
     <hr class="text-dark">
     <div class="container">
