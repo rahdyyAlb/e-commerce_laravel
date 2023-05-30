@@ -26,7 +26,7 @@ Installation en local
 * recupere la nouvelle migration ```php artisan migrate ```
 * pour recuperer les donner ```php artisan db:seed --class=ProductTableSeeder  ```
 * ```Npm run dev ``` 
-* Php artisan serve``` Pour lancer le serveur web
+* ```Php artisan serve``` Pour lancer le serveur web
 * Le projet devrait être accessible via 127.0.0.1
 
 
